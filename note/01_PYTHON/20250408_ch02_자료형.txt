@@ -1,0 +1,15 @@
+1절 변수
+         선언이 필요없고 할당과 동시에 타입이 셋팅
+         분자,숫자,_로 변수작성/숫자로 시작하거나 예약어는 사용불가,  다중 변수할당시 일괄 할당
+
+
+2절  i/o
+     input()입력된 값을 문자로 반환
+     print(출력내용, sep='',end='\n')
+
+3절 기본
+    숫자형 : int, float, complex
+                int/float. complex
+                int/int 실수
+    문자형 : str
+               answkduf dustks : +(연결)*(반복)
