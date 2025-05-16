@@ -1,0 +1,9 @@
+ch02
+글자관련태그 ; h1~h6, p, del, i, b, strong, ins, pre, a
+목록태그 : ul-li, ol-li
+표 : table -tr-td/th
+이미지태그 : img의 src속성, alt속성
+
+포03
+form태그
+공간분할태그

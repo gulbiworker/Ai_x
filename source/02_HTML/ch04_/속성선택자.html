@@ -1,0 +1,28 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        input {color: green; /*글자색*/}
+        input[type='password'] {color:red;}
+        input[type^='te']{width:100px;}
+        input[name$='me']{border: 1px solid red;
+                          outline: 0;
+                          padding: 10px;}
+        img[alt]{width:50px; border:2px dashed red;}
+    </style>
+</head>
+<body>
+    <form>
+        이름 <input type="text" name="name" /><br />
+        아뒤 <input type="text" name="id" /><br />
+        비번 <input type="password" name="pw" /><br />
+        전화 <input type="tel" name="tel" /><br />
+        <img src="ch04/sulhyun.jpg" />
+        <img src="ch04/sulhyun.jpg" alt="설현사진" />
+        <input type="submit" />
+    </form>
+</body>
+</html>

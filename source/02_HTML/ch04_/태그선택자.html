@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>/*css는 위에서부터 아래로 적용*/
+     *{ /*전체 선택자 = 페이지초기화 용도*/
+        margin: 0;
+        padding: 0;
+        color: saddlebrown;
+     }
+     header, nav,section,footer{
+         width: 500px; /*가로사이즈*/
+         border:1px solid gray;
+         margin: 1px auto;
+     }
+     nav ul{/* 수평으로 하고픈 태그의 부모*/
+            overflow:hidden;
+     }
+
+     nav ul li{/*수평으로 할 태그*/
+               float:left;
+               list-style: none;
+               width:125px;
+               text-align:center;
+               margin: 10px 0px;
+     }
+
+     section{/* 수평속성을 지우고 싶은 태그*/
+             clear:both;
+     }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>00 주식회사</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>회사소개</li><li>서비스소개</li><li>고객센터</li>
+        </ul>  
+    </nav>
+    <section>
+        <p>아무말대잔치</p>
+    </section>
+    <footer>
+        <p>서울시</p>
+    </footer>
+
+</body>
+</html>

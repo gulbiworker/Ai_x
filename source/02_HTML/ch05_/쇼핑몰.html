@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        *{margin:0; padding:0;}
+        a{text-decoration:none;
+          color:black;
+          display:block;
+        }
+        li{list-style:none;}
+        /*header 부분*/
+        /*gnb*/
+        .gnb{  
+            background-color: black;
+            text-decoration: none;
+            text-align: center;
+            line-height: 30px;
+            height:30px;
+            overflow:hidden;
+            
+        }
+        .gnb a{color:white;}
+        .gnb ul{
+            width:1000px; margin:0 auto;  
+        }
+        .gnb ul li{
+            float: left;
+            margin: 0 10px;
+            width: 8%;
+        }
+        /*logo*/
+        .logo {
+            width: 200px;
+            border: 1px solid gray;
+            text-align: center;
+            font-size: 2em;
+            margin: 30px auto;
+            padding: 15px 30px;
+           
+        } 
+        /*hitmenu*/
+        .hitmenu{    
+            background-color:white;
+            list-style:none;
+            overflow:hidden;
+        }
+        .hitmenu ul {
+            width:1000px;
+            margin: 0 auto 3px;
+            overflow:hidden;
+        }
+        .hitmenu ul li {
+            float:right;
+            border:1px solid gray;
+            text-align:center;
+            padding: 10px;    
+            
+        .hitmenu ul li a{padding:10px 30px;}
+        }
+        .hitmenu ul li:last-child{
+            border-radius:10px 0 0 10px;
+        }
+        .hitmenu ul li:first-child{
+            border-radius:0 10px 10px 0;}
+
+        
+        /*inb*/
+        .inb {
+            background-color: white;
+            text-decoration: none;
+            text-align: center;
+            line-height: 30px;
+            height: 30px;
+            overflow: hidden;
+            border-top: 1px dashed gray; /* 위쪽 점선 */
+            border-bottom: 1px dashed gray;
+        }
+        .inb a{color:black;}
+        .inb ul{
+            width:1000px; margin:0 auto; 
+            overflow:hidden;
+           
+        }
+        .inb ul li{
+            float: left;/*메뉴 하나당 8개 니까 12.5%*/
+            margin: 0 10px;
+            width: 10.5%;
+        }
+        /*content*/
+        #content .section1{
+            width: 1000px;
+            height:400px;
+            overflow: hiddden;
+            margin: 0 auto;}
+        
+        .section1 .slide.banner{
+            width:696px;
+            height:400px;
+            float:left;
+            border: 1px solid gray;
+            text-align:center;
+            line-height:400px;
+               
+        }
+        .section1 .side.banner {
+                width: 300px;
+                height: 400px;
+                float: right;
+                border: 1px solid gray;
+                line-height:400px;
+                text-align:center;
+         }
+        #content .section2 {
+            border: 1px solid gray;
+            width: 1000px;
+            margin: 0 auto;
+            height: 800px;
+            overflow: hidden;
+        }
+        .section2 .hit_product ul,
+        .section2 .md_product ul {
+            overflow: hidden;
+            border: 1px solid gray;
+            width: 1000px;
+            
+        }
+            .section2 .hit_product ul li,
+            .section2 .md_product ul li {
+                float: left;
+                width: 24%;
+                margin-right: 0.8%;
+                border: 1px solid gray;
+                box-sizing: border-box;
+                line-height: 400px;
+                text-align: center;
+            }
+        #content .section2 .hit_product ul li:first-child,
+        #content .section2 .md_product ul li:first-child {
+            margin-left: 0.8%;
+        }
+        /*footer*/
+        
+        footer {
+            width: 1000px;
+           
+            overflow: hidden;
+            margin: 0 auto;
+            border: 1px solid gray;
+        }
+            footer div:nth-child(1),
+            footer div:nth-child(2),
+            footer div:nth-child(3){
+                float:left;
+                width:33%;
+                box-sizing:border-box;
+                border: 1px solid gray;
+                height:100px;
+                margin-bottom:10px;
+            }
+            footer div:nth-child(4){
+                clear:both;
+                background-color:black;
+                color: white;
+                height:50px;
+                text-align:center;
+                line-height:50px;
+                
+            }       
+    </style>
+</head>
+<body>
+    <header>
+        <div class="gnb">
+            <ul>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Join us</a></li>
+                <li><a href="#">wish list</a></li>
+                <li><a href="#">cart</a></li>
+                <li><a href="#">order</a></li>
+                <li><a href="#">My page</a></li>
+                <li><a href="#">Notice</a></li>
+                <li><a href="#">Qna</a></li>
+                <li><a href="#">Review</a></li>
+                <li><a href="#">favorite</a></li>
+            </ul>
+        </div>
+        <div class="logo">
+            <h1>
+                logo
+            </h1>
+        </div>
+        <div class="hitmenu">
+            <ul>
+                <li><a href="#">hit4</a></li>
+                <li><a href="#">hit3</a></li>
+                <li><a href="#">hit2</a></li>
+                <li><a href="#">hit1</a></li>
+            </ul>
+        </div>
+        <div class="inb">
+            <ul>
+                <li><a href="menu1">menu1</a></li>
+                <li><a href="menu2">menu2</a></li>
+                <li><a href="menu3">menu3</a></li>
+                <li><a href="menu4">menu4</a></li>
+                <li><a href="menu5">menu5</a></li>
+                <li><a href="menu6">menu6</a></li>
+                <li><a href="menu7">menu7</a></li>
+                <li><a href="menu8">menu8</a></li>
+            </ul>
+        </div>
+
+
+    </header>
+    <div id="content">
+        <div class="section1">
+            <div class="slide banner">slide banner</div>
+            <div class="side banner">side banner</div>
+        </div>
+        <div class="section2">
+            <div class="hit_product">
+                <ul>
+                    <li><a href="#">hit_product1</a></li>
+                    <li><a href="#">hit_product2</a></li>
+                    <li><a href="#">hit_product3</a></li>
+                    <li><a href="#">hit_product4</a></li>
+                </ul>
+            </div>
+            <div class="md_product">
+                <ul>
+                    <li><a href="#">md_product1</a></li>
+                    <li><a href="#">md_product2</a></li>
+                    <li><a href="#">md_product3</a></li>
+                    <li><a href="#">md_product4</a></li>
+                </ul>
+            </div>
+        </div><!--section2 끝-->
+
+        <footer>
+            <div class="office_logo">office logo</div>
+            <div class="office_address">office address</div>
+            <div class="shopping_info">shopping info</div>
+            <div class="copyright">copyright</div>
+    </footer>
+</body>
+</html>
