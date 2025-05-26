@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>날짜와 시간</title>
+    <script>
+        var clock, btn;
+        var timerId;
+        var toggle = 1;
+
+        window.onload = function() {
+            clock = document.getElementById('clock');
+            btn = document.getElementById('btn');
+            clock.innerHTML = new Date().toLocaleDateString();
+
+            timerId = setInterval(() => {
+                clock.innerHTML = new Date().toLocaleDateString();
+            }, 1000);
+        };
+
+        const toggleFuntion = () => {
+            if (toggle) {
+                toggle = 0;
+                clearInterval(timerId);
+                btn.innerHTML = '타이머 중지됨';
+            } else {
+                toggle = 1;
+                timerId = setInterval(() => {
+                    clock.innerHTML = new Date().toLocaleDateString();
+                }, 1000);
+                btn.innerHTML = '타이머 가동중';
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>날짜와 시간</h1>
+    <h1 id="clock">날짜와 시간을 요기에</h1>
+    <button id="btn" onclick="toggleFuntion()">타이머 가동중</button>
+</body>
+</html>

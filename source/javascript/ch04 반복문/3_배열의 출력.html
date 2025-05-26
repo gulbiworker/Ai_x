@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        
+    </style>
+    <script>
+        var arr = [273, 32, '홍길동'];
+        document.write('<h3>for 문 이용</h3>')
+        for(let idx=0; idx<arr.length; idx++){
+            document.write(idx + arr[idx]);
+        }
+
+        document.write('<h>for in</h>')
+        for(let idx in arr){
+            document.write(idx + arr[idx]);
+        }
+
+        for(let data of arr){
+            document.write(data);
+        }
+
+        arr.forEach(function(data, idx){
+            document.write(idx + data);
+        });
+        
+        arr.forEach(function(data){
+            docoment.write(data);
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

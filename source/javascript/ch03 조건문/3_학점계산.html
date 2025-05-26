@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        
+    </style>
+    <script>
+        // 점수를 입력받아서 학점을 출력할것
+        // 학점을 입력받아서 grade 를 출력할것
+        /*let score = parseInt(prompt('점수는'));
+        if(score>=90 && score<=100){
+            grade = 'a';
+        }
+        else if(score>=80 && score<=90){
+            grade = 'b';
+        }
+        else if(score>=70 && score<=80){
+            grade = 'c';
+        }
+        else{
+            grade
+             ='나가';
+        }
+        document.write(grade);*/   
+        let score = parseInt(prompt('점수는'));
+        let temp = (score==100) ? (score-1) : (score>= -9 && score<=-1 ? -10 : score);
+        switch(Math.trunc(score/10)){
+            case 10 :
+            case 9 : grade ='a' ;break;
+            case 8 : grade ='b' ;break; 
+            case 7 : grade ='c' ;break;
+            default : grade ='나가';
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

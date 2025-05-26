@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        
+    </style>
+    <script>
+        // prompt 를 이용해서 구구단 출력
+        do{
+            var su = Number(prompt('원하는 구구단은'))
+        }while(isNaN(su || su<2 || su>9));
+        for(i=1 ; i<9 ; i++){
+            document.write(su +'x' + i +'='+ su*i+'<br>');
+        }
+
+    </script>
+</head>
+<body>
+      
+</body>
+</html>

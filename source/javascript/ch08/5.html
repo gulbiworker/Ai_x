@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+  <title>Date Example</title>
+  <script>
+    var now = new Date();
+    document.writeln(now + '<br>');
+    document.writeln(now.toLocaleString() + '<br>');
+    document.writeln(now.toLocaleDateString() + '<br>');
+    document.writeln(now.toLocaleTimeString() + '<br>');
+
+    var openday = new Date(2025, 3, 7, 9, 30, 0); // 4월은 3 (0부터 시작)
+    document.writeln('개강일: ' + openday.toLocaleString() + '<br>');
+
+    // 며칠 지났는지 계산
+    var dayDiff = Math.floor((now - openday) / (1000 * 60 * 60 * 24));
+    document.writeln(dayDiff + '일 지남');
+  </script>
+</head>
+<body>
+</body>
+</html>

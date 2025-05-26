@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body{background-color:orange;}
+        div{
+            background-color:red;
+            display:none;
+        }
+        #toggle:checked ~ div{display: block;}
+        #toggle{display:none;}
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="toggle"/>
+    <p>아무거나</p>
+    <label for="toggle">
+        <img src="img/menu.png">
+        </label>
+    <p>
+        아무거나
+    </p>
+    <div>토글이 나타났다가 사라짐</p>
+</body>
+</html>

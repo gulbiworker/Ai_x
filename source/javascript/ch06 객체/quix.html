@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Timer Page</title>
+    <style>
+        body {
+            background-image: url('img/img03.png');
+            background-size: 100%;
+            color: yellow;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <p id="timer"></p>
+
+    <script>
+        let sec = 0;
+        let color = ['yellow', 'green', 'white'];
+        let image = [
+            'url(img/img01.png)',
+            'url(img/img02.png)',
+            'url(img/img03.png)'
+        ];
+
+        let timerText = document.getElementById("timer");
+
+        setInterval(() => {
+            sec++;
+            timerText.textContent = new Date().toLocaleString() + ' - ' + sec + '초 지남';
+            document.body.style.backgroundImage = image[sec % image.length];
+            document.body.style.color = color[sec % color.length];
+        }, 1000);
+    </script>
+</body>
+</html>

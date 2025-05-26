@@ -1,0 +1,13 @@
+i = Number('');
+console.log('i',i);
+i = parseInt('');
+console.log('i=', NaN, '-타입=', typeof(i));
+f = 10/3;
+console.log('f=',f);
+a = 10/0; 
+console.log('a=',a);
+console.log(a, typeof(a));
+console.log(isNaN(i));
+console.log(isNaN(f));
+console.log(isFinite(a));
+console.log(isFinite(f));
