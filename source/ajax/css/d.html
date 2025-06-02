@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini FPS Game</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    canvas { display: block; }
+    #instructions {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      font-family: sans-serif;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="instructions">Click to play. Move: W A S D | Look: Mouse | Shoot: Click</div>
+
+  <!-- Three.js 라이브러리 -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.159.0/examples/js/controls/PointerLockControls.js"></script>
+
+  <script>
+    // Three.js 기본 설정
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // 컨트롤 설정 (Pointer Lock)
+    const controls = new THREE.PointerLockControls(camera, document.body);
+    document.addEventListener('click', () => {
+      controls.lock();
+    });
+
+    // 바닥 만들기
+    const floor = new THREE.Mesh(
+      new THREE.PlaneGeometry(200, 200),
+      new THREE.MeshBasicMaterial({ color: 0x555555, wireframe: true })
+    );
+    floor.rotation.x = -Math.PI / 2;
+    scene.add(floor);
+
+    // 적(빨간 박스)
+    const enemy = new THREE.Mesh(
+      new THREE.BoxGeometry(2, 2, 2),
+      new THREE.MeshBasicMaterial({ color: 0xff0000 })
+    );
+    enemy.position.set(0, 1, -20);
+    scene.add(enemy);
+
+    // 조명 추가
+    const light = new THREE.HemisphereLight(0xffffff, 0x444444);
+    scene.add(light);
+
+    camera.position.y = 2;
+
+    // 이동 관련 변수
+    const keys = {};
+    const velocity = new THREE.Vector3();
+    const direction = new THREE.Vector3();
+    const clock = new THREE.Clock();
+
+    document.addEventListener('keydown', (e) => keys[e.code] = true);
+    document.addEventListener('keyup', (e) => keys[e.code] = false);
+
+    // 총 쏘기
+    document.addEventListener('mousedown', () => {
+      if (!controls.isLocked) return;
+      const raycaster = new THREE.Raycaster();
+      raycaster.setFromCamera(new THREE.Vector2(0, 0), camera);
+      const intersects = raycaster.intersectObjects([enemy]);
+
+      if (intersects.length > 0) {
+        scene.remove(enemy);
+        alert("🎯 Enemy eliminated!");
+      }
+    });
+
+    // 게임 루프
+    function animate() {
+      requestAnimationFrame(animate);
+      const delta = clock.getDelta();
+
+      // 이동 처리
+      direction.z = Number(keys['KeyW']) - Number(keys['KeyS']);
+      direction.x = Number(keys['KeyD']) - Number(keys['KeyA']);
+      direction.normalize();
+
+      if (controls.isLocked) {
+        velocity.z = direction.z * 10.0 * delta;
+        velocity.x = direction.x * 10.0 * delta;
+
+        controls.moveForward(velocity.z * delta);
+        controls.moveRight(velocity.x * delta);
+      }
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  </script>
+</body>
+</html>

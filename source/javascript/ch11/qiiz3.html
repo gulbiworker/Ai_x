@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        
+    </style>
+    <script>
+        window.onload = () =>{
+            var imgs = document.getElementById('btn');
+            imgs.onmouseover = () => {
+                imgs.src = "img/but1.gif";
+            };
+            imgs.onmouseup = () => {
+                imgs.src = "img/but2.gif";
+        }
+    };
+    </script>
+</head>
+<body>
+    <img id='btn' src="img/but1.gif" alt="mouse up" />
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>quiz4. 메뉴</title>
+  <style>
+    div {
+      width: 300px;
+      margin: 0 auto;
+      border: 1px solid blue;
+      text-align: center;
+    }
+    button {
+      margin: 5px;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+  
+    const url = [
+      'http://www.naver.com',
+      'http://www.daum.net',
+      'http://www.google.com',
+      'http://www.youtube.com'
+    ];
+
+    // 페이지가 로드된 후 실행
+    window.onload = () => {
+      const buttons = document.getElementsByTagName('button');
+
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = () => {
+          window.open(url[i], ); // 새 창으로 열기
+        };
+      }
+    };
+  </script>
+</head>
+<body>
+  <div>
+    <h3>quiz4. 메뉴</h3>
+    <p>
+      <button>네이버</button>
+      <button>다음</button>
+      <button>구글</button>
+      <button>유튜브</button>
+    </p>
+  </div>
+</body>
+</html>

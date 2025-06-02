@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentloaded', ()=>{
+            document.querySelector('button').addEventListener('click', ()=>{
+                let id = document.querySelector('input[name="id"]').value;
+                let params = new URLSearchParams({id:id});
+                console.log('exists.html?id=id');
+                console.log('exists.html?id=${id}');
+                console.log('exists.html?id=${params}');
+                fetch('exists.html?${params}',{method : 'get'})
+                .then(response=>{
+                    if(! response.ok){
+                        throw new Error('${response.status}/${response.statusText}');
+                    } // 정상적으로 작동했는데 t,f 판별
+                    return response.test();
+                })
+                .then(data=>{
+                    document.querySelector('span#idConfirm').innerHTML = data.trim();
+                })
+                .catch(error=>{
+                    alert(error.message);
+                });
+            }); //click
+        }); // contentload
+    </script>
+</head>
+<body>
+    아이디 <input type="text" name="id"><button>중복체크</button><br>
+    <span id="idConfirm"></span>
+</body>
+</html>
