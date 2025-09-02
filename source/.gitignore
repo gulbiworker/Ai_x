@@ -1,1 +1,3 @@
 .ipynb_checkpoints/
+# LLM 벡터 DB 캐시 제외
+source/LLM/chroma/
